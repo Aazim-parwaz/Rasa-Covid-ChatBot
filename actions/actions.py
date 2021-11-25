@@ -22,36 +22,45 @@ class Covid(Action):
         
         # get the current slot values from rasa
         city = tracker.get_slot('city')
-        print(tracker)
+        city2= tracker.get_slot('city2')
+        init_date= tracker.get_slot('init_date')
+        final_date= tracker.get_slot('final_date')
+        response="Sorry, got no idea - but I hope pandemic is near to an end! stay home stay safe till then!. "
+        # confirmed or non-confirmed
         covid_cases_type = tracker.get_slot('covid_cases_type')
        
 
         # set values for empty slots
-        if covid_cases_type is None:
-            covid_cases_type = -1
+        # if covid_cases_type is None:
+        #     covid_cases_type = -1
+        # current data of a city
+        if city2 is None  and final_date is None:
+            
+            totalConfirmed=covid_data(city,city2,init_date,final_date) 
+
+            if totalConfirmed is not None:
+                #answers to the query
+                response="Total Confirmed cases in {} is {}. ".format(city,totalConfirmed) 
+       
+        # current total of two cities/states ex. Delhi and Maharashtra   
+        elif final_date is None and init_date is None:
+
+            totalConfirmed=covid_data(city,city2,init_date,final_date)
+            if totalConfirmed is not None:
+                 #answers to the query
+                 response="Total Confirmed cases of {} and {} altogether is {}".format(city,city2,totalConfirmed)
+
+        # for cases between date to date2
+        elif city2 is None and init_date is not None and final_date is not None:
+
+            totalConfirmed=covid_data(city,city2,init_date,final_date)
+            if totalConfirmed is not None:
+                #answers to the query
+                 response="Confirmed case count from {} to {} is {}".format(init_date,final_date,totalConfirmed)
+       
+            
 
         
-        # list possible cities     
-        possible_cities=["Jammu and Kashmir","Maharashtra","Delhi","Ladakh","Punjab"]
-
-        # Default answer if better answer cannot be found
-        response="Sorry, got no idea - but I hope pandemic is near to an end! stay home stay safe till then!. "
-
-        # read & parse the information and generate response
-        if city in possible_cities:
             
-            totalConfirmed_Current=covid_data(city)
-
-           
-
-            # answers to queries about current weather   
-
-            response="Total Confirmed cases in {} is {}. ".format(city,totalConfirmed_Current) 
-            
-
-        # reponse for if city is not in range of supported cities
-        else:
-            response = "Sorry, currently I am limited to information from Delhi, Maharashtra and Jammu and Kashmir only."
-
         # send the response back to rasa
         dispatcher.utter_message(response)

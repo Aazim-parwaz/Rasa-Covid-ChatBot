@@ -11,19 +11,48 @@ nlu:
 
 - intent: covid_in_city
   examples: |
-    - what is the number of [cases](covid_cases_type) currently in [Jammu and Kashmir](city)?
-    - how's the [covid](covid_cases_type) currently in [Delhi](city)?
-    - Tell me about [covid](covid_cases_type) currently in [Maharashtra](city)
-    - [covid cases](covid_cases_type) in [Punjab](city) currently
-    - how many [cases](covid_cases_type) are in [Ladakh](city) 
- 
-# example questions of when location is not given
+    - what is the number of cases currently in [Jammu and Kashmir](city)?
+    - how's the covid currently in [Delhi](city)?
+    - Tell me about covid currently in [Maharashtra](city)
+    - covid cases in [Punjab](city) currently
+    - how many cases are in [Ladakh](city) 
+    - Hey, what's the current confirmed cases in [Delhi](city)?
+    - currently cases in [Maharashtra](city)?
+    
+# for query 2 in assignment 
+- intent: covid_in_two_city
+  examples: |
+    - Hey, what’s the total count of confirmed cases in [Delhi](city), Maharashtra(city2) altogether?
+    - total confirmed cases in [Delhi](city) and [Maharashtra](city2) together?
+    - total cases currently in [Delhi](city) and [Maharashtra](city2)
+    - Get me the total current confirmed cases in [Delhi](city) and [Maharashtra](city2)
+    - The total current confirmed cases in [Delhi](city) and [Maharashtra](city2)
+    
+
+
+
+
+# for query 3 in assignment
+# note: format= 'dd-mm-yyyy' as in json in api provided
+- intent: covid_in_period
+  examples: |
+    - What’s the confirmed case count from [1st Oct 2020](init_date) to [12th Oct 2020](final_date)?
+    - Hey, what's the current confirmed cases from [1st Oct 2020](init_date) to [12th Oct 2020](final_date)?
+    - currently cases from [1st Oct 2020](init_date) to [12th Oct 2020](final_date)?
+    - Hey, what’s the total count of confirmed cases from [1st Oct 2020](init_date) to [12th Oct 2020](final_date) in India?
+    - total confirmed cases from [1st Oct 2020](init_date) to [12th Oct 2020](final_date) in India?
+    - total cases from [1st Oct 2020](init_date) to [12th Oct 2020](final_date) in India
+    - Get me the total current confirmed cases from [1st Oct 2020](init_date) to [12th Oct 2020](final_date) in India
+    - Tell me the total current confirmed cases from [1st Oct 2020](init_date) to [12th Oct 2020](final_date) in India
+
+
+# example questions of when location is not given assumes current city
 - intent: covid_without_city
   examples: |
-    - what is the [covid situation](covid_cases_type) today ?
-    - how's the [pandemic](covid_cases_type) currently?
-    - Tell me the [COVID-19](covid_cases_type) status
-    - [COVID-19](covid_cases_type) news today
+    - what is the covid situation today ?
+    - how's the pandemic currently?
+    - Tell me the COVID-19 status
+    - COVID-19 news today
     
 
 - intent: greet
@@ -159,17 +188,12 @@ nlu:
     - currently
     - now
     - current
-
-- synonym: today
-  examples: |
     - later
     - today
     - later today
     - going to
-
-- synonym: tomorrow
-  examples: |
     - tomorrow
+
 
 - synonym: cases
   examples: |
@@ -178,7 +202,9 @@ nlu:
     - corona cases
     - COVID19 cases
     - COVID cases
-    - 
+    - COVID-19 cases
+    - covid-19 cases
+    - pandemic
 
 - synonym: Delhi
   examples: |
@@ -187,16 +213,8 @@ nlu:
     - Dilli
     - Dhilli
     - Old Delhi
+    - delhi
 
-- synonym: Mumbai
-  examples: |
-    - Bombay
-    - bombay
-    - Mombai
-    - Bombai
-    - Mombay
-    - Bambay
-    - mumbai
 - synonym: Maharashtra
   examples: |
     - maharashtra

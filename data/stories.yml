@@ -2,16 +2,55 @@ version: "2.0"
 
 stories:
 
-- story: covid_1
+- story: covid_in_city path
   steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: how_are_you
+  - action: utter_happy
   - intent: covid_in_city
   - action: action_covid
 
-- story: covid_2
+- story: covid_without_city path
   steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: how_are_you
+  - action: utter_happy
   - intent: covid_without_city
+  - action: utter_ask_city
   - action: city_form
   - action: action_covid
+
+- story: covid_in_two_city path 
+  steps:
+  - intent: covid_in_two_city
+  - action: action_covid
+  - intent: happy
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: covid_in_period path 
+  steps:
+  - intent: covid_in_period
+  - action: action_covid
+  - intent: happy
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_goodbye
+
+
+- story: covid_2 happy path 3
+  steps:
+  - intent: covid_without_city
+  - action: utter_ask_city
+  - action: city_form
+  - action: action_covid
+  - intent: happy
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_goodbye
 
 # just in case some one asks - who are you...
 

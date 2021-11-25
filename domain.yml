@@ -5,6 +5,8 @@ version: "2.0"
 intents:
   - who_are_you
   - covid_in_city
+  - covid_in_two_city
+  - covid_in_period
   - covid_without_city
   - greet
   - goodbye
@@ -19,6 +21,9 @@ intents:
 # slots for carrying information between intents and actions and also to and from external python actions - i.e. actions.py here
 entities:
 - city # the location of covid cases
+- city2 # the location of second covid state
+- init_date # date from which to calculate cases upto final date
+- final_date # date upto which to calculate cases
 - covid_cases_type # e.g. covid cases, cases, covid situation etc ....
 
 # further description of the slots
@@ -26,11 +31,20 @@ slots:
   city:
     type: text
     influence_conversation: true
-  requested_slot:
+  city2:
     type: text
-    influence_conversation: false
+    influence_conversation: true
+  init_date: 
+    type: text
+    influence_conversation: true
+  final_date:
+    type: text
+    influence_conversation: true
+  requested_slot:
+    type: unfeaturized
+    influence_conversation: false  
   covid_cases_type:
-    type: categorical
+    type: text
     influence_conversation: true
     
 
@@ -70,14 +84,14 @@ responses:
 
   utter_ask_city:
   - text: "In which Indian city?"
-  - text: "I know weather in Delhi, Maharastra etc, which one would you like to know?"
+  - text: "I know covid status in Delhi, Maharastra etc, which one would you like to know?"
   - text: "Which city?"
 
   utter_capabilities:
   - text: "I can tell the current covid cases of Indian states. You can make queries about the covid scenerio states of India."
   - text: "I will provide you the information of covid cases in India so that you can take precautions to save you and your family!"
 
-# all actions, including the action_wx which is separate python code and retrieves the weather information and forms the sentenses.
+# all actions, including the action_covid which is separate python code and retrieves the covid information and forms the sentenses.
 actions: 
   - action_covid
   - utter_ask_city
