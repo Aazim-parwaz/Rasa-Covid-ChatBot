@@ -42,7 +42,7 @@ class Covid(Action):
                 response="Total Confirmed cases in {} is {}. ".format(city,totalConfirmed) 
        
         # current total of two cities/states ex. Delhi and Maharashtra   
-        elif city is not None and city2 is not None and init_date is None and final_date is None::
+        elif city is not None and city2 is not None and init_date is None and final_date is None:
 
             totalConfirmed=covid_data(city,city2,init_date,final_date)
             #answers to the query
