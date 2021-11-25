@@ -30,7 +30,7 @@ def covid_data(city,city2,init_date,final_date):
             
        
         # current total of two cities/states ex. Delhi and Maharashtra   
-     elif  init_date is None and final_date is None:
+     elif  city is not None and city2 is not None and init_date is None and final_date is None:
 
           lastOriginUpdate=data["lastOriginUpdate"]
           current_date=lastOriginUpdate[0:lastOriginUpdate.find('T')]
@@ -48,7 +48,7 @@ def covid_data(city,city2,init_date,final_date):
           return total
 
        # for city and city2 current data
-     elif city2 is None and city is None:
+     elif city is None and city2 is None and init_date is not None and final_date is not None:
 
           data=data['data']
           data_init=0
@@ -78,7 +78,7 @@ def covid_data(city,city2,init_date,final_date):
 # 	return 1
 
 
-print(covid_data("Jammu and Kashmir",None,None,None))
+
 
 
 

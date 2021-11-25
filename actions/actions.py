@@ -34,29 +34,28 @@ class Covid(Action):
         # if covid_cases_type is None:
         #     covid_cases_type = -1
         # current data of a city
-        if city2 is None  and final_date is None:
+        if city2 is None  and init_date is None and final_date is None:
             
             totalConfirmed=covid_data(city,city2,init_date,final_date) 
-
+            #answers to the query
             if totalConfirmed is not None:
-                #answers to the query
                 response="Total Confirmed cases in {} is {}. ".format(city,totalConfirmed) 
        
         # current total of two cities/states ex. Delhi and Maharashtra   
-        elif final_date is None and init_date is None:
+        elif city is not None and city2 is not None and init_date is None and final_date is None::
 
             totalConfirmed=covid_data(city,city2,init_date,final_date)
+            #answers to the query
             if totalConfirmed is not None:
-                 #answers to the query
                  response="Total Confirmed cases of {} and {} altogether is {}".format(city,city2,totalConfirmed)
 
         # for cases between date to date2
-        elif city2 is None and init_date is not None and final_date is not None:
+        elif city is None and city2 is None and init_date is not None and final_date is not None:
 
             totalConfirmed=covid_data(city,city2,init_date,final_date)
+            #answers to the query
             if totalConfirmed is not None:
-                #answers to the query
-                 response="Confirmed case count from {} to {} is {}".format(init_date,final_date,totalConfirmed)
+                response="Confirmed case count from {} to {} is {}".format(init_date,final_date,totalConfirmed)
        
             
 
