@@ -2,8 +2,8 @@
 
 ## Table of Contents
 1. [introduction](##introduction)
-2. [COVID-19 data](##COVID-19 data)
-3. [Conversational flow](##Conversation Flow)
+2. [COVID-19 data](##COVID-19_data)
+3. [Conversational flow](##Conversation_Flow)
 4. [Implementation](##Implementation)
 5. [Installation](##Installation)
 6. [References](##References)
