@@ -1,0 +1,207 @@
+version: "2.0"
+# user intents with examples
+nlu:
+- intent: who_are_you
+  examples: |
+    - who are you
+    - are you a bot
+    - what is your name
+    - are you human
+    - what are you
+
+- intent: covid_in_city
+  examples: |
+    - what is the number of [cases](covid_cases_type) currently in [Jammu and Kashmir](city)?
+    - how's the [covid](covid_cases_type) currently in [Delhi](city)?
+    - Tell me about [covid](covid_cases_type) currently in [Maharashtra](city)
+    - [covid cases](covid_cases_type) in [Punjab](city) currently
+    - how many [cases](covid_cases_type) are in [Ladakh](city) 
+ 
+# example questions of when location is not given
+- intent: covid_without_city
+  examples: |
+    - what is the [covid situation](covid_cases_type) today ?
+    - how's the [pandemic](covid_cases_type) currently?
+    - Tell me the [COVID-19](covid_cases_type) status
+    - [COVID-19](covid_cases_type) news today
+    
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - howdy
+    - greetings
+    - namaste
+    - salam
+    - ram ram
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you
+    - what is your name
+    - what are you
+
+# chitchat.... 
+- intent: how_are_you
+  examples: |
+    - how are you
+    - are you ok
+    - nice to meet, how are you
+    - howdy
+    - hows it hanging
+    - how is it going
+    - hows it going
+
+
+# questions about what can I do
+- intent: capabilities
+  examples: |
+    - what can you do
+    - what are your capabilities
+    - what are you good at
+    - what are you good for
+    - any instructions
+    - instructions
+    - how do i use this
+    - info
+    - information
+    - help
+    - can you help me
+
+
+# synonym defnitions to limit variations and to help NLU
+
+- synonym: current
+  examples: |
+    - currently
+    - now
+    - current
+
+- synonym: today
+  examples: |
+    - later
+    - today
+    - later today
+    - going to
+
+- synonym: tomorrow
+  examples: |
+    - tomorrow
+
+- synonym: cases
+  examples: |
+    - covid cases
+    - patients
+    - corona cases
+    - COVID19 cases
+    - COVID cases
+    - 
+
+- synonym: Delhi
+  examples: |
+    - New Delhi
+    - Dehli
+    - Dilli
+    - Dhilli
+    - Old Delhi
+
+- synonym: Mumbai
+  examples: |
+    - Bombay
+    - bombay
+    - Mombai
+    - Bombai
+    - Mombay
+    - Bambay
+    - mumbai
+- synonym: Maharashtra
+  examples: |
+    - maharashtra
+    - maharastrah
+    - mahrastra
+    - mahrastrah
+
+

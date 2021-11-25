@@ -1,0 +1,62 @@
+version: "2.0"
+
+stories:
+
+- story: covid_1
+  steps:
+  - intent: covid_in_city
+  - action: action_covid
+
+- story: covid_2
+  steps:
+  - intent: covid_without_city
+  - action: city_form
+  - action: action_covid
+
+# just in case some one asks - who are you...
+
+- story: who_are_you
+  steps:
+  - intent: who_are_you
+  - action: utter_iamabot
+
+
+# and what can I do
+- story: capabilities
+  steps:
+  - intent: capabilities
+  - action: utter_capabilities
+
+# should the user be friendly...
+- story: how_are_you
+  steps:
+  - intent: how_are_you
+  - action: utter_im_well
+
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
