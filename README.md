@@ -1,12 +1,12 @@
 # COVID-19 Chatbot with Rasa 2.0: open source conversational AI
 
 ## Table of Contents
-1. [introduction](#general-info)
-2. [COVID-19 data](#technologies)
-3. [Conversational flow](#flow)
-4. [Implementation](#implementation)
-5. [Installation](#installation)
-6. [References](#references)
+1. [introduction](##introduction)
+2. [COVID-19 data](##COVID-19 data)
+3. [Conversational flow](##Conversation Flow)
+4. [Implementation](##Implementation)
+5. [Installation](##Installation)
+6. [References](##References)
 ## introduction
 
 As natural language processing (NLP) technology and chatbot systems over the past few years have evolved quickly, also the usefulness of chatbots has increased. The motivation of chatbots is productivity; they have an instant access to information they refer to and are efficient in assisting users. (Brandtzaeg, 2017, *Why people use chatbots*. COVID-19 chatbot is an excellent use case example for the technology.
@@ -21,7 +21,7 @@ The COVID-19 data format chosen here is defined by (https://api.rootnet.in/covid
 
 The conversation is initiated by the end-user. A greeting or a goodbye should reset any prior assumptions or knowledge collected by the bot during previous interactions. When time or COVID-19 detail are not contained in the query, the bot shall report the current and generic COVID-19 conditions. When the city is not provided in the query, the bot shall request for it. Any further specifics in the query should be answered in more detail if information is available. 
 
-## 3 major queries that a user can perform apart from greeting,goodbye etc:
+## 3 Major queries that a user can perform apart from greeting,goodbye etc:
 As this is a demo modal of how to integrate API in rasa. So I have designed this COVID-19 bot to answer limited queries as follows:
 ### Query1
 user can ask for current confirmed covid cases of any city in India
@@ -37,7 +37,7 @@ user can ask for total current confirmed cases of any two cities in India
     - Hey, what’s the total count of confirmed cases in Delhi, Maharashtra altogether?
     - total confirmed cases in Delhi and Maharashtra together?
     - total cases currently in Delhi and Maharashtra
-    - Get me the total current confirmed cases in Delhi and [Maharashtra
+    - Get me the total current confirmed cases in Delhi and Maharashtra
     - Tell me the total current confirmed cases in Delhi and Maharashtra
 
 ### Query3
