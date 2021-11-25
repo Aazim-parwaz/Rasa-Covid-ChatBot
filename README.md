@@ -1,24 +1,25 @@
 # COVID-19 Chatbot with Rasa 2.0: open source conversational AI
 
 ## Table of Contents
-1. [introduction](##introduction)
-2. [COVID-19 data](##COVID-19_data)
-3. [Conversational flow](##Conversation_Flow)
-4. [Implementation](##Implementation)
-5. [Installation](##Installation)
-6. [References](##References)
+1. [introduction](#introduction)
+2. [COVID-19 data](#COVID-19_data)
+3. [Conversational flow](#Conversation_Flow)
+4. [Implementation](#Implementation)
+5. [Installation](#Installation)
+6. [References](#References)
 ## introduction
+<a name="introduction"></a>
 
 As natural language processing (NLP) technology and chatbot systems over the past few years have evolved quickly, also the usefulness of chatbots has increased. The motivation of chatbots is productivity; they have an instant access to information they refer to and are efficient in assisting users. (Brandtzaeg, 2017, *Why people use chatbots*. COVID-19 chatbot is an excellent use case example for the technology.
 
 The content of a chatbot consists of the personality, conversation flows and the information it can deliver to the user. Personality is created by interactions and responses and by acting differently in different situations. These responses should be designed so that it maximises the engagement between the bot and the user (Katz, 2019, *The Ultimate Guide to chatbot personality*, Chatbots Magazine). The COVID-19 chatbot described here aims to use these principles, however due to the efforts required, in a rather minimalistic way leaving plenty of room for future improvements. e.g. in the area of how to handle chitchat.
 
 ## COVID-19 data
-
+<a name="COVID-19_data"></a>
 The COVID-19 data format chosen here is defined by (https://api.rootnet.in/covid19-in/stats/history), which provides COVID-19 data freely for developers. 
 
 ## Conversation Flow
-
+<a name="Conversation_Flow"></a>
 The conversation is initiated by the end-user. A greeting or a goodbye should reset any prior assumptions or knowledge collected by the bot during previous interactions. When time or COVID-19 detail are not contained in the query, the bot shall report the current and generic COVID-19 conditions. When the city is not provided in the query, the bot shall request for it. Any further specifics in the query should be answered in more detail if information is available. 
 
 ## 3 Major queries that a user can perform apart from greeting,goodbye etc:
@@ -56,7 +57,7 @@ user can ask total cases between any dates(format: yyyy-mm-dd)
 
 
 ## Implementation
-
+<a name="Implementation"></a>
 All components are defined to support the conversation flow . The end-user intents here are: **who_are_you, covid_in_city, covid_in_two_city, covid_in_period, covid_without_city, greet, goodbye, affirm, deny, mood_great, mood_unhappy, bot_challenge, how_are_you, capabilities**
 In Rasa, the slots can be used for passing information to and back between Rasa and external actions. Three slots are required: **city,city2, init_date,final_date**.
 
@@ -68,7 +69,7 @@ The user intents, stories and rules are used for training the NLP model. These i
 
 
 ## Installation
- 
+<a name="Installation"></a> 
 Installation assumes existing installation of miniconda or anaconda. 
 https://www.anaconda.com/
 
@@ -119,7 +120,7 @@ rasa shell
 
 
 ## References
-
+<a name="References"></a>
     - Rasa. (n.d.). Rasa: Open source conversational AI. URL: https://rasa.com
     
     
