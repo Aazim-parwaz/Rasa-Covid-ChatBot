@@ -9,7 +9,7 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, AllSlotsReset
 from covid_api import covid_data
 
 
@@ -63,3 +63,4 @@ class Covid(Action):
             
         # send the response back to rasa
         dispatcher.utter_message(response)
+        return [AllSlotsReset()]

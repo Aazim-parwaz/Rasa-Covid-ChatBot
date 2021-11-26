@@ -33,7 +33,7 @@ nlu:
 
 
 # for query 3 in assignment
-# note: format= 'dd-mm-yyyy' as in json in api provided
+# note: format= 'yyyy-mm-dd' as in json in api provided
 - intent: covid_in_period
   examples: |
     - What’s the confirmed case count from [1st Oct 2020](init_date) to [12th Oct 2020](final_date)?
@@ -49,7 +49,7 @@ nlu:
 # example questions of when location is not given assumes current city
 - intent: covid_without_city
   examples: |
-    - what is the covid situation today ?
+    - what is the covid situation today?
     - how's the pandemic currently?
     - Tell me the COVID-19 status
     - COVID-19 news today
