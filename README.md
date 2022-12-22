@@ -1,4 +1,4 @@
-# COVID-19 Chatbot with Rasa 2.0: open source conversational AI(currently migrating to Rasa 3.0)
+# COVID-19 Chatbot with Rasa 2.0: open source conversational AI(currently migrating to Rasa 3.x)
 
 ## Table of Contents
 1. [introduction](#introduction)
