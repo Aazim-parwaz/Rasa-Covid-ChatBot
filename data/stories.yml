@@ -1,77 +1,7 @@
-version: "2.0"
+version: "3.1"
+
 
 stories:
-
-- story: covid_in_city path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: how_are_you
-  - action: utter_happy
-  - intent: covid_in_city
-  - action: action_covid
-
-- story: covid_without_city path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: how_are_you
-  - action: utter_happy
-  - intent: covid_without_city
-  - action: utter_ask_city
-  - action: city_form
-  - action: action_covid
-
-- story: covid_in_two_city path 
-  steps:
-  - intent: covid_in_two_city
-  - action: action_covid
-  - intent: happy
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_goodbye
-
-- story: covid_in_period path 
-  steps:
-  - intent: covid_in_period
-  - action: action_covid
-  - intent: happy
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_goodbye
-
-
-- story: covid_2 happy path 3
-  steps:
-  - intent: covid_without_city
-  - action: utter_ask_city
-  - action: city_form
-  - action: action_covid
-  - intent: happy
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_goodbye
-
-# just in case some one asks - who are you...
-
-- story: who_are_you
-  steps:
-  - intent: who_are_you
-  - action: utter_iamabot
-
-
-# and what can I do
-- story: capabilities
-  steps:
-  - intent: capabilities
-  - action: utter_capabilities
-
-# should the user be friendly...
-- story: how_are_you
-  steps:
-  - intent: how_are_you
-  - action: utter_im_well
-
 
 - story: happy path
   steps:
@@ -99,3 +29,88 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+
+- story: corona intro
+  steps:
+  - intent: corona_intro
+  - action: utter_corona_intro
+
+
+- story: corona spread
+  steps:
+  - intent: corona_spread
+  - action: utter_corona_spread
+
+- story: corona food spread
+  steps:
+  - intent: corona_food_spread
+  - action: utter_corona_food_spread
+
+- story: corona warm weather
+  steps:
+  - intent: corona_spread_warm
+  - action: utter_corona_spread_warm
+
+- story: corona risk
+  steps:
+  - intent: corona_spread_risk
+  - action: utter_corona_spread_risk
+
+- story: corona tracker path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_stats_check
+  - action: utter_corona_stats_check
+  - intent: corona_states_stat
+  - action: actions_corona_state_stat
+
+- story: corona tracker 2 path
+  steps:
+  - intent: corona_stats_check
+  - action: utter_corona_stats_check
+  - intent: corona_states_stat
+  - action: actions_corona_state_stat
+
+- story: corona community spread path
+  steps:
+  - intent: corona_community
+  - action: utter_corona_community
+
+- story: corona mosquito path
+  steps:
+  - intent: corona_mosq_spread
+  - action: utter_corona_mosq_spread
+
+- story: corona prevent path
+  steps:
+  - intent: corona_prevent
+  - action: utter_corona_prevent
+
+- story: corona symptoms path
+  steps:
+  - intent: corona_symptoms
+  - action: utter_corona_symptoms
+
+- story: corona vaccine path
+  steps:
+  - intent: corona_vaccine
+  - action: utter_corona_vaccine
+
+- story: corona infected path
+  steps:
+  - intent: corona_infected person
+  - action: utter_corona_infected person
+
+
+
+- story: thanks path
+  steps:
+  - intent: Thanks
+  - action: utter_Thanks
+
+- story: who am i
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

@@ -5,62 +5,83 @@
 # https://rasa.com/docs/rasa/custom-actions
 
 
-# load some libraries
+# This is a simple example for a custom action which utters "Hello World!"
+
 from typing import Any, Text, Dict, List
+
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet, AllSlotsReset
-from covid_api import covid_data
+import requests
 
 
-class Covid(Action):
+# class ActionHelloWorld(Action):
+#
+#     def name(self) -> Text:
+#         return "action_hello_world"
+#
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#
+#         dispatcher.utter_message(text="Hello World!")
+#
+#         return []
+
+
+class ActionHelloLoc(Action):
 
     def name(self) -> Text:
-        return "action_covid"
+        return "action_get_loc"
 
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        # get the current slot values from rasa
-        city = tracker.get_slot('city')
-        city2= tracker.get_slot('city2')
-        init_date= tracker.get_slot('init_date')
-        final_date= tracker.get_slot('final_date')
-        response="Sorry, got no idea - but I hope pandemic is near to an end! stay home stay safe till then!. "
-        # confirmed or non-confirmed
-        covid_cases_type = tracker.get_slot('covid_cases_type')
-       
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        slot_name = tracker.get_slot("state")
 
-        # set values for empty slots
-        # if covid_cases_type is None:
-        #     covid_cases_type = -1
-        # current data of a city
-        if city2 is None  and init_date is None and final_date is None:
-            
-            totalConfirmed=covid_data(city,city2,init_date,final_date) 
-            #answers to the query
-            if totalConfirmed is not None:
-                response="Total Confirmed cases in {} is {}. ".format(city,totalConfirmed) 
-       
-        # current total of two cities/states ex. Delhi and Maharashtra   
-        elif city is not None and city2 is not None and init_date is None and final_date is None:
+        print("slotname", slot_name)
 
-            totalConfirmed=covid_data(city,city2,init_date,final_date)
-            #answers to the query
-            if totalConfirmed is not None:
-                 response="Total Confirmed cases of {} and {} altogether is {}".format(city,city2,totalConfirmed)
+        dispatcher.utter_message(
+            text="So You Live In " + slot_name.title() + " , Here Are Your Location's Corona Stats: \n")
 
-        # for cases between date to date2
-        elif city is None and city2 is None and init_date is not None and final_date is not None:
+        return []
 
-            totalConfirmed=covid_data(city,city2,init_date,final_date)
-            #answers to the query
-            if totalConfirmed is not None:
-                response="Confirmed case count from {} to {} is {}".format(init_date,final_date,totalConfirmed)
-       
-            
+class Actioncoronastats(Action):
 
-        
-            
-        # send the response back to rasa
-        dispatcher.utter_message(response)
-        return [AllSlotsReset()]
+    def name(self) -> Text:
+        return "actions_corona_state_stat"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        responses = requests.get("https://api.covid19india.org/data.json").json()
+
+        entities = tracker.latest_message['entities']
+        print("Now Showing Data For:", entities)
+        state = None
+
+        for i in entities:
+            if i["entity"] == "state":
+                state = i["value"]
+
+        message = "Please Enter Correct State Name !"
+
+        if state == "india":
+            state = "Total"
+        for data in responses["statewise"]:
+            if data["state"] == state.title():
+                print(data)
+                message = "Now Showing Cases For --> " + state.title() + " Since Last 24 Hours : "+ "\n" + "Active: " + data[
+                    "active"] + " \n" + "Confirmed: " + data["confirmed"] + " \n" + "Recovered: " + data[
+                              "recovered"] + " \n" + "Deaths: " + data["deaths"] + " \n" + "As Per Data On: " + data[
+                              "lastupdatedtime"]
+
+        print(message)
+        dispatcher.utter_message(message)
+
+        return []
+
+
+
+
+
