@@ -23,25 +23,31 @@ The COVID-19 data format chosen here is defined by (https://api.rootnet.in/covid
 The conversation is initiated by the end-user. A greeting or a goodbye should reset any prior assumptions or knowledge collected by the bot during previous interactions. When time or COVID-19 detail are not contained in the query, the bot shall report the current and generic COVID-19 conditions. When the city is not provided in the query, the bot shall request for it. Any further specifics in the query should be answered in more detail if information is available. 
 
 
+
+
 ## Demonstration:<br>
  ### Sample Demonstration Images:<br>
  Chatbot's Intro Interface:<br>
-<img src=></img><br>
+<img src="https://user-images.githubusercontent.com/59523836/209435980-fd31fa24-82d5-4235-8dbc-96c034a0625d.png"></img><br>
  Chatbot's Chat Interface:<br>
-<img src=></img><br>
+<img src="https://user-images.githubusercontent.com/59523836/209436003-8f377aaf-f502-444b-9706-eda27508cc9f.png"></img><br>
  Chatbot's Tracker Interface:<br>
-<img src=></img><br>
-Deployed Chatbot's Chat Interface:<br>
-<img src=></img><br>
-Deployed Chatbot's Tracker Interface:<br>
-<img src=></img><br>
+<img src="https://user-images.githubusercontent.com/59523836/209436020-a88e9660-59cc-40b9-a607-4d84367de6e6.png"></img><br>
+Deployed Chatbot's Telegram interface:<br>
+<img src="https://user-images.githubusercontent.com/59523836/209436030-9b391ae9-08e3-464c-acac-890b5efe3bae.png"></img><br>
+
  <br><br>
+ 
+ 
+ 
+ 
+ 
  ### Sample Demonstration Videos:<br>
  #### Working Of Chatbot In Local Server:<br>
- <img src=></img>
+ <img src="https://user-images.githubusercontent.com/59523836/209436111-7492f454-f90d-4ead-8102-b9a66b26ce09.webm"></img>
  
   #### Working Of Chatbot In Deployable Server:<br>
- <img src=></img>
+ <img src="https://user-images.githubusercontent.com/59523836/209436093-0a6fd620-c734-4864-aef9-f2fdd1cd1e4f.webm"></img>
 <br>
 
 
