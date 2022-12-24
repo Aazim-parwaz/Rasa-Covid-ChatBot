@@ -22,37 +22,27 @@ The COVID-19 data format chosen here is defined by (https://api.rootnet.in/covid
 <a name="Conversation_Flow"></a>
 The conversation is initiated by the end-user. A greeting or a goodbye should reset any prior assumptions or knowledge collected by the bot during previous interactions. When time or COVID-19 detail are not contained in the query, the bot shall report the current and generic COVID-19 conditions. When the city is not provided in the query, the bot shall request for it. Any further specifics in the query should be answered in more detail if information is available. 
 
-## 3 Major queries that a user can perform apart from greeting,goodbye etc:
-As this is a demo modal of how to integrate API in rasa. So I have designed this COVID-19 bot to answer limited queries as follows:
-### Query1
-user can ask for current confirmed covid cases of any city in India
-#### Examples:
-    -what is the number of cases currently in Delhi?
-    - how's the covid currently in Delhi?
-    - Tell me about covid currently in Maharashtra
-    - covid cases in Punjab currently
 
-### Query2
-user can ask for total current confirmed cases of any two cities in India
-#### Examples:
-    - Hey, what’s the total count of confirmed cases in Delhi, Maharashtra altogether?
-    - total confirmed cases in Delhi and Maharashtra together?
-    - total cases currently in Delhi and Maharashtra
-    - Get me the total current confirmed cases in Delhi and Maharashtra
-    - Tell me the total current confirmed cases in Delhi and Maharashtra
-
-### Query3
-user can ask total cases between any dates(format: yyyy-mm-dd)
-
-#### Examples:
-    - What’s the confirmed case count from 2020-10-01 to 2020-10-12?
-    - Hey, what's the current confirmed cases from 2020-10-01 to 2020-10-12?
-    - currently cases from 2020-10-01 to 2020-10-12?
-    - Hey, what’s the total count of confirmed cases from 2020-10-01 to 2020-10-12?
-    - total confirmed cases from 2020-10-01 to 2020-10-12 in India?
-    - total cases from from 2020-10-01 to 2020-10-12? in India
-    - Get me the total current confirmed cases from 2020-10-01 to 2020-10-12? in India
-    - Tell me the total current confirmed cases from 2020-10-01 to 2020-10-12? in India
+## Demonstration:<br>
+ ### Sample Demonstration Images:<br>
+ Chatbot's Intro Interface:<br>
+<img src=></img><br>
+ Chatbot's Chat Interface:<br>
+<img src=></img><br>
+ Chatbot's Tracker Interface:<br>
+<img src=></img><br>
+Deployed Chatbot's Chat Interface:<br>
+<img src=></img><br>
+Deployed Chatbot's Tracker Interface:<br>
+<img src=></img><br>
+ <br><br>
+ ### Sample Demonstration Videos:<br>
+ #### Working Of Chatbot In Local Server:<br>
+ <img src=></img>
+ 
+  #### Working Of Chatbot In Deployable Server:<br>
+ <img src=></img>
+<br>
 
 
 
