@@ -111,13 +111,12 @@ rasa shell
 Terminal 1(starting ngrok on default port of rasa 5005):
 ```
 ngrok http 5005
-
 ```
+copy paste the url in the credentials file.
 
 Terminal 2(start bot):
 ```
 rasa run
-
 ```
 Terminal 3(start actions file):
 
