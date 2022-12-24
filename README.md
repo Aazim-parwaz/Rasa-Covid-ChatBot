@@ -1,14 +1,14 @@
 # COVID-19 Chatbot with Rasa 2.0: open source conversational AI(currently migrating to Rasa 3.x)
 
 ## Table of Contents
-1. [introduction](#introduction)
+1. [Introduction](#introduction)
 2. [COVID-19 data](#COVID-19_data)
 3. [Conversational flow](#Conversation_Flow)
 4. [Demonstration](#demo)
 5. [Implementation](#Implementation)
 6. [Installation](#Installation)
 7. [References](#References)
-## introduction
+## Introduction
 <a name="introduction"></a>
 
 As natural language processing (NLP) technology and chatbot systems over the past few years have evolved quickly, also the usefulness of chatbots has increased. The motivation of chatbots is productivity; they have an instant access to information they refer to and are efficient in assisting users. (Brandtzaeg, 2017, *Why people use chatbots*. COVID-19 chatbot is an excellent use case example for the technology.
@@ -21,7 +21,7 @@ The COVID-19 data format chosen here is defined by (https://api.rootnet.in/covid
 
 ## Conversation Flow
 <a name="Conversation_Flow"></a>
-The conversation is initiated by the end-user. A greeting or a goodbye should reset any prior assumptions or knowledge collected by the bot during previous interactions. When time or COVID-19 detail are not contained in the query, the bot shall report the current and generic COVID-19 conditions. When the city is not provided in the query, the bot shall request for it. Any further specifics in the query should be answered in more detail if information is available. 
+The conversation is initiated by the end-user. The user starts with a greeting "hi" , "hey" etc. The bot responds with the list you can as. if user chooses option 1. The bot asks for the state name. When user enters the state name , the bot replies with the details for cases.
 
 
 
@@ -54,7 +54,7 @@ Deployed Chatbot's Telegram interface:<br>
 <a name="Implementation"></a>
 
 
-The user intents, stories and rules are used for training the NLP model. These intent examples cover tens of different ways of asking questions, and explaining to the model how to find the values for the three slots and what is the intent the user has. The stories contain the conversation flows and rules that will stop any conversation and force a different path. 
+The user intents, stories and rules are used for training the NLP model. These intent examples cover tens of different ways of asking questions. The stories contain the conversation flows and rules that will stop any conversation and force a different path. 
 
 
 ## Installation
