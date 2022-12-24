@@ -4,9 +4,10 @@
 1. [introduction](#introduction)
 2. [COVID-19 data](#COVID-19_data)
 3. [Conversational flow](#Conversation_Flow)
-4. [Implementation](#Implementation)
-5. [Installation](#Installation)
-6. [References](#References)
+4. [Demonstration](#demo)
+5. [Implementation](#Implementation)
+6. [Installation](#Installation)
+7. [References](#References)
 ## introduction
 <a name="introduction"></a>
 
@@ -25,7 +26,9 @@ The conversation is initiated by the end-user. A greeting or a goodbye should re
 
 
 
-## Demonstration:<br>
+## Demonstration:
+<a name="demo"></a>
+<br>
  ### Sample Demonstration Images:<br>
  Chatbot's Intro Interface:<br>
 <img src="https://user-images.githubusercontent.com/59523836/209435980-fd31fa24-82d5-4235-8dbc-96c034a0625d.png"></img><br>
@@ -43,23 +46,30 @@ Deployed Chatbot's Telegram interface:<br>
  
  
  ### Sample Demonstration Videos:<br>
- #### Working Of Chatbot In Local Server:<br>
- <img src="https://user-images.githubusercontent.com/59523836/209436111-7492f454-f90d-4ead-8102-b9a66b26ce09.webm"></img>
- 
+ #### Starting Of Chatbot In Local Server:<br>
+ [start_shell.webm](https://user-images.githubusercontent.com/59523836/209438734-f42a78ff-b1ec-466b-a543-36f2f885f846.webm)
+
+
+#### Demo Of Chatbot In Local Server:<br>
+ [demo_shell_interface.webm](https://user-images.githubusercontent.com/59523836/209438786-c921d3cb-b48a-4e1b-aaf5-798119b2f324.webm)
+
+
+#### Starting Chatbot In Deployable Server:<br>
+
+
+[starting_deployment_env.webm](https://user-images.githubusercontent.com/59523836/209439046-56a9e5fd-9d2f-4862-8417-cb73c9c69b2d.webm)
+
+
   #### Working Of Chatbot In Deployable Server:<br>
- <img src="https://user-images.githubusercontent.com/59523836/209436093-0a6fd620-c734-4864-aef9-f2fdd1cd1e4f.webm"></img>
-<br>
+  [telegram_demo.webm](https://user-images.githubusercontent.com/59523836/209439104-eed7b7bc-e086-488a-bae0-dfee8e84f55e.webm)
+
+ 
 
 
 
 ## Implementation
 <a name="Implementation"></a>
-All components are defined to support the conversation flow . The end-user intents here are: **who_are_you, covid_in_city, covid_in_two_city, covid_in_period, covid_without_city, greet, goodbye, affirm, deny, mood_great, mood_unhappy, bot_challenge, how_are_you, capabilities**
-In Rasa, the slots can be used for passing information to and back between Rasa and external actions. Three slots are required: **city,city2, init_date,final_date**.
 
-The responses where the personality is also largely created are: **utter_greet, utter_goodbye, utter_ask city** (triggers city_form), **utter_iamabot, utter_capabilities, utter_im_well so on**. This also includes the external action, **action_covid**, which fetches the COVID-19 data, parses it and generates the COVID-19 response sentence.
-
-External actions are user defined functions written in python. Only one action, **action_covid**, is required. It is split in two separate functionalities here: **actions.py** which receives slots: **city,city2,init_date and final_date** from Rasa. It then queries the COVID-19 data for specific city from **covid_api.py** where a function **covid_data(city,city2,init_data,final_data)** is defined. The function returns the COVID-19 data(totalcases) after getting filtered out from (https://api.rootnet.in/covid19-in/stats/history) onecall json format to **action_covid**, which then forms a response sentense to be passed back to Rasa.
 
 The user intents, stories and rules are used for training the NLP model. These intent examples cover tens of different ways of asking questions, and explaining to the model how to find the values for the three slots and what is the intent the user has. The stories contain the conversation flows and rules that will stop any conversation and force a different path. 
 
