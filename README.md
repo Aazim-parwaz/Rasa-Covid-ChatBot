@@ -5,7 +5,6 @@
 2. [COVID-19 data](#COVID-19_data)
 3. [Conversational flow](#Conversation_Flow)
 4. [Demonstration](#demo)
-5. [Implementation](#Implementation)
 6. [Installation](#Installation)
 7. [References](#References)
 ## Introduction
@@ -47,14 +46,6 @@ Deployed Chatbot's Telegram interface:<br>
  
  
  
-
-
-
-## Implementation
-<a name="Implementation"></a>
-
-
-The user intents, stories and rules are used for training the NLP model. These intent examples cover tens of different ways of asking questions. The stories contain the conversation flows and rules that will stop any conversation and force a different path. 
 
 
 ## Installation
