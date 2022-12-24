@@ -21,7 +21,7 @@ The COVID-19 data format chosen here is defined by (https://api.rootnet.in/covid
 
 ## Conversation Flow
 <a name="Conversation_Flow"></a>
-The conversation is initiated by the end-user. The user starts with a greeting "hi" , "hey" etc. The bot responds with the list you can as. if user chooses option 1. The bot asks for the state name. When user enters the state name , the bot replies with the details for cases.
+The conversation is initiated by the end-user. The user starts with a greeting "hi" , "hey" etc. The bot responds with the list that user can ask to bot. if user chooses option 1. The bot asks for the state name. When user enters the state name , the bot replies with the details for cases.
 
 
 
