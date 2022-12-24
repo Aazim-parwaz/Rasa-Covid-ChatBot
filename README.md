@@ -45,24 +45,7 @@ Deployed Chatbot's Telegram interface:<br>
  
  
  
- ### Sample Demonstration Videos:<br>
- #### Starting Of Chatbot In Local Server:<br>
- [start_shell.webm](https://user-images.githubusercontent.com/59523836/209438734-f42a78ff-b1ec-466b-a543-36f2f885f846.webm)
-
-
-#### Demo Of Chatbot In Local Server:<br>
- [demo_shell_interface.webm](https://user-images.githubusercontent.com/59523836/209438786-c921d3cb-b48a-4e1b-aaf5-798119b2f324.webm)
-
-
-#### Starting Chatbot In Deployable Server:<br>
-
-
-[starting_deployment_env.webm](https://user-images.githubusercontent.com/59523836/209439046-56a9e5fd-9d2f-4862-8417-cb73c9c69b2d.webm)
-
-
-  #### Working Of Chatbot In Deployable Server:<br>
-  [telegram_demo.webm](https://user-images.githubusercontent.com/59523836/209439104-eed7b7bc-e086-488a-bae0-dfee8e84f55e.webm)
-
+ 
  
 
 
@@ -122,6 +105,26 @@ Start the discussion with rasabot:
 ```
 rasa shell
 ```
+
+## Starting the model on deployable server
+
+Terminal 1(starting ngrok on default port of rasa 5005):
+```
+ngrok http 5005
+
+```
+
+Terminal 2(start bot):
+```
+rasa run
+
+```
+Terminal 3(start actions file):
+
+```
+rasa run actions
+```
+Now just go to "Covid-bot-Aazim" on telegram and start using! 
 
 
 
