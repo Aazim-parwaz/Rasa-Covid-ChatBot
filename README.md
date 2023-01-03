@@ -85,7 +85,7 @@ Train the model with command
 rasa train
 ```
 
-There are additional actions that need to be started before starting the bot evaluation. These are in ```actions.py``` and ```covid_api.py``` files. To do so, run below commands on two different terminals: 
+There are additional actions that need to be started before starting the bot evaluation. These are in ```actions.py``` file. To do so, run below commands on two different terminals: 
 
 ```
 rasa run actions
